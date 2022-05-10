@@ -39,12 +39,13 @@ while(index<250):
         data=data.replace(originalText,replacementText)
 
         #creating the variable the new file will be given the name from the excel sheet
-        newNameOfFile=sheet.cell_value(index,2)+'.txt'
+        newNameOfFile=sheet.cell_value(index,2)+str(index)'.txt'
     #creating the new file
     f=open((newNameOfFile),'w')
     f.write(data)
 
     #updating the index so the while loop will not be infinite
     index+=1
+    
 
 print ("Done")
