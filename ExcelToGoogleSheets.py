@@ -16,7 +16,7 @@ sheet = wb.sheet_by_index(0)
 wb = Workbook()
 index=1
 arrayOfTextfile=[]
-while(i<250): #250 is the size of the rows in the excel file
+while(index<250): #250 is the size of the rows in the excel file
     with open(r'NameOfTextFile.txt','r') as file:
         
         data=file.read()#reading entire .txt file and assigning it the variabel 'data'
@@ -72,10 +72,7 @@ print(values)
 
 ArrayOfArray=[arrayOfTextfile]
 request = sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-                            range="NameOfSheet!A1", valueInputOption="RAW", body={"values":ArrayOfArray}).execute()"""RAW	The values the user has entered will not be parsed and will be stored as-is.
-                                                                                                                   """USER_ENTERED	The values will be parsed as if the user typed them into the UI. Numbers will stay as numbers, but strings may be converted to numbers, dates, etc. following the same rules that are applied when entering text into a cell via the Google Sheets UI.
+                            range="NameOfSheet!A1", valueInputOption="RAW", body={"values":ArrayOfArray}).execute()#RAW	The values the user has entered will not be parsed and will be stored as-is.
+                                                                                                                   #USER_ENTERED	The values will be parsed as if the user typed them into the UI. Numbers will stay as numbers, but strings may be converted to numbers, dates, etc. following the same rules that are applied when entering text into a cell via the Google Sheets UI.
 #Google Sheet Updates 
-
-
-
 
